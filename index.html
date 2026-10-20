@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="知页，一个安静的私人知识笔记本。按专业整理文字与图片，密码登录后访问。">
+  <meta name="theme-color" content="#234d3c"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self' https:; object-src 'none'; base-uri 'none'; form-action 'self'"><title>知页 · 私人知识笔记本</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
+  <script defer src="./config.js"></script><script defer src="./app.js"></script>
+</head>
+<body>
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h12a2 2 0 0 1 2 2v16H7a2 2 0 0 1-2-2V3Zm3 0v18M11 8h5m-5 4h5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 12h8m-8 4h6"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 6"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="m10 14 4-4m-5-2 3-3a5 5 0 0 1 7 7l-3 3m-1 1-3 3a5 5 0 0 1-7-7l3-3"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v5h16v-5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 0 1 6 0c0 3-3 2-3 5m0 3v.2"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+</defs></svg>
+
+<section id="login-view" class="login-view">
+ <div class="login-story">
+  <a class="brand" href="./"><span class="brand-mark"><svg><use href="#i-book"/></svg></span><span>知页<span class="brand-en">ZHIYE</span></span></a>
+  <div class="story-content"><div class="eyebrow"><span></span> 你的私人知识空间</div><h1>所学有所藏，<br>灵感有处放。</h1><p>让零散的知识，慢慢长成自己的体系。<br>一本笔记，装下每一次新的发现。</p>
+   <div class="book-illustration" aria-hidden="true"><div class="paper paper-back"></div><div class="paper paper-front"><span class="paper-label">MY KNOWLEDGE COLLECTION</span><div class="paper-title">保持好奇<br>持续记录<span>Keep learning.</span></div><div class="paper-rule"></div><div class="paper-rule short"></div><div class="paper-stamp"><svg><use href="#i-book"/></svg></div></div><div class="little-tag"><span>✦</span> 每一页，都是积累</div></div>
+  </div><footer>文字 · 图片 · 你的知识体系</footer>
+ </div>
+ <div class="login-panel"><div class="login-card"><span class="lock-badge"><svg><use href="#i-lock"/></svg></span><div class="eyebrow">A SPACE OF YOUR OWN</div><h2>打开你的笔记本</h2><p class="muted">输入密码，回到自己的知识世界。</p><form id="login-form"><label for="password">访问密码</label><div class="password-field"><input id="password" type="password" autocomplete="current-password" placeholder="请输入你的密码" required><button id="toggle-password" type="button">显示</button></div><p id="login-error" class="form-error" role="alert"></p><button class="primary login-button" id="login-submit" type="submit">进入笔记本 <svg><use href="#i-arrow"/></svg></button></form><div class="privacy-note"><svg><use href="#i-lock"/></svg><span>笔记与图片仅在通过密码验证后读取</span></div><p id="connection-note" class="connection-note"></p></div><div class="login-bottom">把有价值的知识，留给未来的自己。</div></div>
+</section>
+
+<div id="workspace" class="workspace" hidden>
+ <aside class="sidebar"><a class="brand" href="./"><span class="brand-mark"><svg><use href="#i-book"/></svg></span><span>知页<span class="brand-en">ZHIYE</span></span></a><div class="space-label">我的知识空间 <span class="private-chip"><svg><use href="#i-lock"/></svg> 私人</span></div>
+  <label class="search-box"><svg><use href="#i-search"/></svg><input id="search" placeholder="搜索全部书页" aria-label="搜索全部书页" maxlength="100"><kbd>/</kbd></label>
+  <button class="all-notes nav-item" id="all-notes"><svg><use href="#i-grid"/></svg><span>全部书页</span><span class="count" id="total-count">0</span></button>
+  <div class="sidebar-heading">专业笔记本<button class="icon-button" id="add-notebook" title="新建笔记本" aria-label="新建笔记本"><svg><use href="#i-plus"/></svg></button></div><nav id="notebook-list" aria-label="专业笔记本"></nav>
+  <div class="sidebar-bottom"><div class="sidebar-tip"><span>✦</span><p>不必一次整理完所有知识，<br>从今天的一页开始。</p></div><button class="nav-item" id="backup-button"><svg><use href="#i-down"/></svg>导出备份</button><button class="nav-item" id="settings-button"><svg><use href="#i-lock"/></svg>设置与安全</button><div class="owner-line"><span class="avatar">我</span><div>我的私人笔记<span>好好记录，慢慢积累</span></div><button class="icon-button" id="logout" title="退出登录" aria-label="退出登录"><svg><use href="#i-arrow"/></svg></button></div></div>
+ </aside>
+ <section class="pages-panel"><div class="pages-heading"><div><span class="eyebrow">NOTEBOOK</span><h2 id="collection-title">全部书页</h2></div><button id="notebook-options" class="icon-button" title="笔记本设置" aria-label="笔记本设置"><svg><use href="#i-more"/></svg></button></div><button class="new-page" id="add-page"><svg><use href="#i-plus"/></svg>新建书页</button><div class="list-caption"><span id="page-count">0 个书页</span><span>最近编辑 ↓</span></div><div id="page-list" class="page-list"></div><div class="pages-footer"><svg><use href="#i-book"/></svg><span>让知识有迹可循</span></div></section>
+ <main class="main-panel"><header class="topbar"><button class="icon-button mobile-menu" id="mobile-menu" aria-label="展开笔记目录"><svg><use href="#i-menu"/></svg></button><div class="breadcrumb"><span>我的笔记</span><span>/</span><strong id="breadcrumb-title">开始记录</strong></div><div class="topbar-actions"><span id="save-status" class="save-status" role="button" tabindex="0" aria-live="polite" aria-label="保存状态，保存失败时按回车处理">已保存</span><button class="icon-button" id="help-button" title="使用帮助" aria-label="使用帮助"><svg><use href="#i-help"/></svg></button><button class="icon-button" id="page-options" title="书页操作" aria-label="书页操作"><svg><use href="#i-more"/></svg></button></div></header>
+ <div id="empty-view" class="empty-view"><div class="empty-book"><svg><use href="#i-book"/></svg></div><span class="eyebrow">A NEW CHAPTER</span><h2>给知识一个停留的地方</h2><p>新建一个书页，写下想法，或粘贴飞书里的内容。</p><button id="empty-add-page" class="primary">写下第一页 <svg><use href="#i-plus"/></svg></button></div>
+ <section id="document-view" class="document-view" hidden><div class="toolbar" role="toolbar" aria-label="文字格式"><select id="block-format" aria-label="段落格式"><option value="p">正文</option><option value="h1">大标题</option><option value="h2">小标题</option><option value="h3">三级标题</option><option value="blockquote">引用</option><option value="pre">代码</option></select><span class="toolbar-divider"></span><button data-command="bold" title="加粗 Ctrl+B" aria-label="加粗"><b>B</b></button><button data-command="italic" title="斜体 Ctrl+I" aria-label="斜体"><i>I</i></button><button data-command="underline" title="下划线 Ctrl+U" aria-label="下划线"><u>U</u></button><button data-command="strikeThrough" title="删除线" aria-label="删除线"><s>S</s></button><span class="toolbar-divider"></span><button data-command="insertUnorderedList" title="无序列表" aria-label="无序列表">☷</button><button data-command="insertOrderedList" title="有序列表" aria-label="有序列表">≡</button><button id="insert-link" title="插入链接" aria-label="插入链接"><svg><use href="#i-link"/></svg></button><button id="insert-image" class="image-button" title="插入图片"><svg><use href="#i-image"/></svg><span>图片</span></button><span class="toolbar-divider"></span><button data-command="undo" title="撤销 Ctrl+Z" aria-label="撤销">↶</button><button data-command="redo" title="重做 Ctrl+Y" aria-label="重做">↷</button><span class="toolbar-spacer"></span><span class="toolbar-hint">粘贴，即刻记录</span></div><div class="document-scroll"><article class="document"><div class="document-label"><span id="document-notebook">笔记</span><span class="tiny-dot"></span><span>知识手记</span></div><input id="page-title" class="page-title" placeholder="无标题书页" aria-label="书页标题" maxlength="160"><div class="document-meta"><span id="document-date"></span><span>·</span><span id="word-count">0 字</span></div><div class="document-rule"></div><div id="editor" class="editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="书页内容" data-placeholder="从这里开始记录…&#10;可以直接粘贴文字、截图，或从飞书复制内容。"></div><div class="end-mark"><span></span>✦<span></span></div></article></div><footer class="document-footer"><span><svg><use href="#i-lock"/></svg>仅自己可见</span><span id="storage-label">自动保存已开启</span></footer></section>
+ </main>
+</div>
+<input type="file" id="image-input" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden><input type="file" id="import-input" accept="application/json,.json" hidden>
+<dialog id="dialog"><form id="dialog-form"><div class="dialog-heading"><h2 id="dialog-title"></h2><button type="button" id="dialog-close" class="icon-button" aria-label="关闭">×</button></div><div id="dialog-body"></div><p class="form-error" id="dialog-error" role="alert"></p><div class="dialog-actions"><button type="button" class="secondary" id="dialog-cancel">取消</button><button type="submit" class="primary" id="dialog-confirm">确定</button></div></form></dialog>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+</body></html>
